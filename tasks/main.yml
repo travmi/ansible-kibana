@@ -1,7 +1,7 @@
 ---
 
 - name: create destination directory
-  file: path={{ kibana_path }} owner=www-data group=www-data mode=0755 state=directory
+  file: path={{ kibana_path }} owner=nginx group=nginx mode=0755 state=directory
   tags: [kibana]
 
 - include: kibana3.yml

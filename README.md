@@ -9,6 +9,8 @@ Requirements
 This role requires Ansible 1.4 or higher and platform requirements are listed
 in the metadata file.
 
+* `Elasticsearch`
+
 Role Variables
 --------------
 
@@ -20,8 +22,11 @@ them are as follows.
 # dns_url_kibana: kibana.domain.lan
 dns_url_kibana: kibana
 
+# elasticsearch server to use
+elasticsearch_url:
+
 # Folder to store Kibana
-kibana_path: /usr/share/nginx/www/kibana
+kibana_path: /var/www/kibana
 
 # Manage service
 kibana_manage_service: True
@@ -36,13 +41,10 @@ kibana_full_version: 4.1.1
 # For v3, use GitHub tag
 #kibana_full_version: v3.1.2
 
-# ES version
-es_version: 1.4
-
 # kibana4 configuration options
 kibana_port: 5601
 kibana_host: '0.0.0.0'
-kibana_elasticsearch_url: 'http://{{dns_url_kibana}}:9200'
+kibana_elasticsearch_url: 'http://{{elasticsearch_url}}:9200'
 kibana_elasticsearch_preserve_host: true
 kibana_index: '.kibana'
 kibana_enable_authentication: false
@@ -126,5 +128,3 @@ Author Information
 ------------------
 
 Pierre Mavro / deimosfr
-
-
