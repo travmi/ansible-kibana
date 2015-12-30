@@ -13,3 +13,6 @@
 
 - name: remove Kibana archive
   file: path=/tmp/kibana-{{kibana_full_version}}.tgz state=absent force=yes
+
+- name: restart nginx
+  service: name=nginx state=restarted

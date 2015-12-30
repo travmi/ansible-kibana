@@ -6,7 +6,7 @@ dns_url_kibana: kibana
 elasticsearch_url: localhost
 
 # Folder to store Kibana
-kibana_path: /var/www/kibana
+kibana_path: /opt/kibana
 
 # Manage service
 kibana_manage_service: True
